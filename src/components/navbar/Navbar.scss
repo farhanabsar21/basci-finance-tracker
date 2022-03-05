@@ -1,0 +1,36 @@
+@import '../../global.scss';
+
+.navigation{
+    padding: 2.5% 0;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .logo{
+        width: 50%;
+    }
+    .auth{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        a{
+            color: $text;
+            margin: 0 2.5%;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        .sign-up{
+            width: 120px;
+            height: 40px;
+            border-radius: 30px;
+            background-color: bisque;
+            color: #000;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

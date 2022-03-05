@@ -1,0 +1,39 @@
+@import '../../global.scss';
+
+.login-form-container{
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form{
+        width: 350px;
+        padding: 2.5%;
+        background-color: antiquewhite;
+        .input-container{
+            margin-top: 5%;
+            input{
+                outline: 0;
+                border: none;
+                width: 100%;
+                padding: 12px 10px;
+                color: $textLight;
+                font-size: 16px;
+                background-color: $background;
+                border-radius: 0;
+                margin-top: 2.5%;
+            }
+            button{
+                outline: 0;
+                border: 0;
+                background-color: $text;
+                color: antiquewhite;
+                padding: 10px;
+                border-radius: 0;
+                font-size: 16px;
+                text-transform: capitalize;
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+}
