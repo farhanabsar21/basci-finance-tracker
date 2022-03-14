@@ -11,6 +11,9 @@ const Signup = () => {
     const HandleSignUpForm = (e) => {
         e.preventDefault()
         signUp(email, password, displayName)
+        setDisplayName('')
+        setEmail('')
+        setPassword('')
     }
     
     return (

@@ -2,8 +2,7 @@ import { useEffect, useState } from "react"
 import { projectAuth } from "../firebase/config"
 import { useAuthContext } from "./useAuthContext"
 
-export const useSignUp = () => {
-    
+export const useLogin = () => {
     const { dispatch } = useAuthContext()
     const [error, setError] = useState(null)
     const [isPending, setIsPending] = useState(false)
@@ -11,38 +10,34 @@ export const useSignUp = () => {
     // clean up state
     const [isCancel, setIsCancelled] = useState(false)
 
-    const signUp = async (email, password, displayName) => {
+    const login = async (email, password) => {
         setError(null)
         setIsPending(true)
-
+        
         try{
-            const res = await projectAuth.createUserWithEmailAndPassword(email, password)
-            if(!res){
-                throw new Error('could not complete sign up')
-            }
-            await res.user.updateProfile({displayName: displayName})
+            const res = await projectAuth.signInWithEmailAndPassword(email, password)
             dispatch({
                 type: 'LOGIN',
-                payload: res.user 
+                payload: res.user
             })
             // update state according to clean up
             if(!isCancel){
                 setIsPending(false)
                 setError(null)
             }
-
-        }catch (err){
-            if(!isCancel){
+        }
+        catch(err){
+            if(isCancel){
                 console.log(err.message)
                 setError(err.message)
                 setIsPending(false)
             }
         }
     }
-
+    
+    // we need some clean up functions 
     useEffect(() => {
         return () => setIsCancelled(true)
     }, [])
-
-    return { error, isPending, signUp }
+    return { login, error, isPending }
 }
