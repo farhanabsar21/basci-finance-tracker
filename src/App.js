@@ -6,6 +6,7 @@ import NotFound from './pages/notFound/NotFound';
 import Signup from './pages/signup/Signup';
 import { useAuthContext } from './hooks/useAuthContext';
 function App() {
+  
   const { authIsReady, user } = useAuthContext()
 
   return (
