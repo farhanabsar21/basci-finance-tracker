@@ -3,17 +3,21 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyC1JvxZ2ht0VJ5fGENkR-r48axP71cDAeA",
-    authDomain: "food-recipe-app-d9644.firebaseapp.com",
-    projectId: "food-recipe-app-d9644",
-    storageBucket: "food-recipe-app-d9644.appspot.com",
-    messagingSenderId: "927946578242",
-    appId: "1:927946578242:web:964cf174a8e3bcd35710db"
-};
+    apiKey: "AIzaSyD7oddCbg_7nAvbuXeGeoBD4xmCSHjbizo",
+    authDomain: "transaction-e97bf.firebaseapp.com",
+    projectId: "transaction-e97bf",
+    storageBucket: "transaction-e97bf.appspot.com",
+    messagingSenderId: "1011857138025",
+    appId: "1:1011857138025:web:4072735f30977d1011ddf8"
+  };
 
 firebase.initializeApp(firebaseConfig)
 
 const projectFirestore = firebase.firestore()
 const projectAuth = firebase.auth()
 
-export { projectFirestore, projectAuth }
+// timestamp
+const timestamp = firebase.firestore.Timestamp
+
+
+export { projectFirestore, projectAuth, timestamp }
