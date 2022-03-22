@@ -1,0 +1,23 @@
+@import '../../../global.scss';
+
+.transaction-container{
+    padding: 2.5%;
+    li{
+        list-style-type: none;
+        background-color: $white;
+        box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.1);
+        padding: 10px 20px;
+        margin-top: 2.5%;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .userName{
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+        .amount{
+            font-weight: 700;
+        }
+    }
+}

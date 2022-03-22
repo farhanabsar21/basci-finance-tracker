@@ -1,0 +1,23 @@
+@import '../../../global.scss';
+
+.loader-container{
+    height: calc(20px + 2vw);
+    width: calc(20px + 2vw);
+    border: 4px solid $background;
+    border-top: 4px solid $link;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    animation: loader 1s infinite linear;
+}
+
+@keyframes loader {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
