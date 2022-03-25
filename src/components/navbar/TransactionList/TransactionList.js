@@ -5,7 +5,7 @@ const TransactionList = ({data}) => {
     return (
         <ul className='transaction-container'>
             {data.map(transaction => 
-                <li>
+                <li key={transaction.id}>
                     <p className='userName'>{transaction.userName}</p>
                     <p className='amount'>${transaction.amount}</p>
                 </li>
