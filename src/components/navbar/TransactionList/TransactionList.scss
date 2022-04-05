@@ -19,5 +19,15 @@
         .amount{
             font-weight: 700;
         }
+        button{
+            outline: 0;
+            border: 0;
+            background-color: inherit;
+            opacity: 0.5;
+            cursor: pointer;
+            &:hover{
+                opacity: 1;
+            }
+        }
     }
 }
